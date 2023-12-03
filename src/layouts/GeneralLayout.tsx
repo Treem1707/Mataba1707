@@ -28,9 +28,11 @@ function GeneralLayout({ children }: Props) {
     ]);
     setLoading(true);
     try {
+      setMessage("");
       const { data } = await axios.post("https://enroll-mate-backend.onrender.com/reply", {
         query: message,
       });
+      
       console.log(data);
       setMessages((oldMessages: any) => [
         ...oldMessages,
@@ -40,7 +42,7 @@ function GeneralLayout({ children }: Props) {
         },
       ]);
 
-      setMessage("");
+      
       setLoading(false);
     } catch (error: any) {
       console.log(getMessage(error));
