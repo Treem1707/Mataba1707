@@ -6,7 +6,7 @@ type Props = {}
 const Home = (props: Props):ReactElement => {
   return (
     <GeneralLayout>
-      <div className='min-h-screen'>Home Page</div>
+      <div className='flex-1 h-full bg-slate-50'>Home Page</div>
     </GeneralLayout>
   )
 }
