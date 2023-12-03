@@ -28,7 +28,7 @@ function GeneralLayout({ children }: Props) {
     ]);
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:7000/reply", {
+      const { data } = await axios.post("https://enroll-mate-backend.onrender.com/reply", {
         query: message,
       });
       console.log(data);
