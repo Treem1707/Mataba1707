@@ -1,10 +1,13 @@
 import Navbar from "@components/navigation/Navbar";
 import {
-  ChatBubbleOvalLeftIcon,
   ChevronDownIcon,
   PlayIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
+import {
+  ChatBubbleBottomCenterIcon, PaperAirplaneIcon,
+} from "@heroicons/react/24/solid";
+
 import React, { ReactNode, useState } from "react";
 
 type Props = {
@@ -33,7 +36,7 @@ function GeneralLayout({ children }: Props) {
         {isChatOpen && (
           <div className="relative h-96 w-80 shadow-lg bg-white rounded-2xl mb-2 flex flex-col">
             <div onClick={sendMessageHandler} className="flex cursor-pointer bg-pink-600 absolute -right-5 bottom-10 rounded-full p-4 text-white">
-              <PlayIcon height={20} width={20} />
+              <PaperAirplaneIcon height={20} width={20} />
             </div>
             <div className="flex flex-row justify-between bg-pink-600 p-4 text-white rounded-t-2xl">
               <div className="flex flex-row items-center space-x-2">
@@ -47,7 +50,7 @@ function GeneralLayout({ children }: Props) {
                 <ChevronDownIcon height={20} width={20} />
               </div>
             </div>
-            <div className="flex-1 flex flex-col h-full p-4 overflow-scroll">
+            <div className="flex-1 flex flex-col h-full p-4 overflow-y-scroll">
                 {messages?.map((item:any, index:number)=>(
                   <div key={index} className="flex ml-auto self-end">
                     <p className="bg-pink-600 text-white rounded-l-full rounded-r-full px-4 py-2 text-sm font-medium my-2">{item}</p>
@@ -82,7 +85,7 @@ function GeneralLayout({ children }: Props) {
             {isChatOpen ? (
               <XMarkIcon height={32} width={32} className=" text-white" />
             ) : (
-              <ChatBubbleOvalLeftIcon
+              <ChatBubbleBottomCenterIcon
                 height={32}
                 width={32}
                 className=" text-white"
