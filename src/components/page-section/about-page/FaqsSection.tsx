@@ -35,10 +35,7 @@ const faqs = [
       available for online learning. I recommend visiting the Courses Page to explore 
       the course catalog and find the specific online courses you are interested in.`,
   },
-  {
-    heading: "How can i track my Application?",
-    description: ``,
-  },
+ 
 ];
 
 const FaqsSection = (props: Props) => {
