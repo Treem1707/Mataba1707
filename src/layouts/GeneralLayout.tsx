@@ -86,7 +86,7 @@ function GeneralLayout({ children }: Props) {
                 <>
                   {item.from === "me" && (
                     <div key={index} className="flex ml-auto self-end">
-                      <p className="bg-pink-600 text-white rounded-l-full rounded-r-full px-4 py-2 text-sm font-medium my-1">
+                      <p className="bg-pink-600 text-white rounded-l-3xl rounded-r-3xl px-4 py-2 text-sm font-medium my-1">
                         {item.message}
                       </p>
                     </div>
@@ -97,7 +97,7 @@ function GeneralLayout({ children }: Props) {
                     <>
                       {item.from === "bot" && (
                         <div key={index} className="flex mr-auto self-start">
-                          <p className="text-slate-900 border border-pink-600 rounded-l-full rounded-r-full px-4 py-2 text-sm font-medium my-2">
+                          <p className="text-slate-900 border border-pink-600 rounded-l-3xl rounded-r-3xl px-4 py-2 text-sm font-medium my-2">
                             {item.message}
                           </p>
                         </div>
