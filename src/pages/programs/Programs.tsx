@@ -26,7 +26,7 @@ const Programs = () => {
             INTRODUCTION
           </p>
           <p className="max-w-xs mx-auto w-full pb-16 text-3xl text-center text-slate-900 font-bold">
-            Optimize your learning approach for academic success
+            Optimize Your Learning Approach for Academic Success
           </p>
           <div className="grid grid-cols-3 gap-8">
            {
@@ -75,7 +75,7 @@ const EnrollItem = (props:EnrollItemProps) => {
         <Avatar h={10} w={10} name="tatendaa" />
         <div className="flex flex-col">
           <p className="text-sm font-medium text-slate-400">
-            Prof. Simba Chingwena
+            Prof. Tanaka R Mataba
           </p>
           <p className="font-semibold text-slate-700">H.O.D</p>
         </div>
