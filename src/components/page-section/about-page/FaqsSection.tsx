@@ -65,7 +65,7 @@ const FaqsSection = (props: Props) => {
   };
   return (
     <div className="w-full bg-slate-50 py-16">
-      <div className="max-w-7xl w-full mx-auto grid grid-cols-3 gap-4">
+      <div className="max-w-7xl w-full mx-auto grid grid-cols-3 gap-4 px-4">
         {/* first row */}
         <div className="col-span-1 space-y-6">
           <p className="text-sm font-medium text-pink-600">OUR PROFESSIONALS</p>

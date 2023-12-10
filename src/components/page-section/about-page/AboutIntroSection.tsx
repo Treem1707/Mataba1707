@@ -5,7 +5,7 @@ type Props = {}
 
 const AboutIntroSection = (props: Props) => {
   return (
-    <div className="bg-slate-50 w-full py-16">
+    <div className="bg-slate-50 w-full py-16 px-4">
     <div className="max-w-7xl w-full mx-auto flex flex-row">
       <img src={about_intro} alt="about intro" className="w-1/3" />
       <div className="w-2/3 flex flex-col space-y-2">
