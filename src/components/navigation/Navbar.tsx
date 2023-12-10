@@ -9,7 +9,7 @@ function Navbar({}: Props) {
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
+            <a href="/">
               <h2 className="text-2xl font-semibold text-slate-500"><span className="text-slate-900 font-extrabold">Enroll</span>Mate</h2>
             </a>
             <div className="md:hidden">
@@ -58,7 +58,7 @@ function Navbar({}: Props) {
           >
             <ul className="items-center text-sm font-medium justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
               <li className="text-text-slate-700 hover:text-slate-900">
-                <a href="javascript:void(0)">Home</a>
+                <a href="/">Home</a>
               </li>
               <li className="text-text-slate-700 hover:text-slate-900">
                 <a href="/about">About Us</a>
