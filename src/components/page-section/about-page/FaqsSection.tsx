@@ -2,6 +2,9 @@ import mataba from "@assets/about-page/mataba-about.svg";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import axios from "axios";
+import { apiUrl } from "@utils/apiUrl";
+import { getMessage } from "@helpers/getMessage";
 
 type Props = {};
 
@@ -38,6 +41,30 @@ const faqs = [
 ];
 
 const FaqsSection = (props: Props) => {
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const [mesasage, setMessage] = useState("");
+  const [name, setName] = useState("");
+
+  const sendEmail = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.post(`${apiUrl}/mailer/send-mail`, {
+        to: "tanalkarnld@gmail.com",
+        from: email,
+        text: mesasage,
+        name: name,
+      });
+      setMessage("");
+      setName("");
+      setEmail("");
+      setLoading(false);
+      console.log(getMessage(data));
+    } catch (error: any) {
+      setLoading(false);
+      console.log(getMessage(error));
+    }
+  };
   return (
     <div className="w-full bg-slate-50 py-16">
       <div className="max-w-7xl w-full mx-auto grid grid-cols-3 gap-4">
@@ -128,6 +155,8 @@ const FaqsSection = (props: Props) => {
               <p className="text-xs font-medium">Name</p>
               <input
                 type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 className="bg-[#E5D8FD] py-3 px-4 outline-none text-sm rounded-full"
                 placeholder="Enter name "
               />
@@ -136,6 +165,8 @@ const FaqsSection = (props: Props) => {
               <p className="text-xs font-medium">email</p>
               <input
                 type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="bg-[#E5D8FD] py-3 px-4 outline-none text-sm rounded-full"
                 placeholder="Enter email "
               />
@@ -144,6 +175,8 @@ const FaqsSection = (props: Props) => {
               <p className="text-xs font-medium">Message</p>
               <textarea
                 rows={5}
+                value={mesasage}
+                onChange={(e) => setMessage(e.target.value)}
                 className="bg-[#E5D8FD] py-3 px-4 outline-none text-sm rounded-3xl"
                 placeholder="Enter message "
               />

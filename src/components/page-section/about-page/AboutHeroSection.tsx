@@ -7,7 +7,7 @@ type Props = {
 const AboutHeroSection = (props: Props) => {
   return (
     <div className="min-h-[80vh] bg-slate-50 flex flex-col">
-      <div className="max-w-7xl w-full mx-auto grid flex-1 h-full py-16 grid-cols-3">
+      <div className="max-w-7xl w-full mx-auto grid flex-1 h-full py-16 grid-cols-3 px-4">
         <div className="flex flex-col col-span-1 ">
           <p className="text-4xl font-bold text-slate-900 pb-2">
             {props.heading}

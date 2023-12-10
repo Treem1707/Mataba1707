@@ -4,6 +4,7 @@ import subscribe_picture from "@assets/about-page/suscribe-picture.svg";
 type Props = {}
 
 const SubscribeNow = (props: Props) => {
+  
   return (
     <div className="flex bg-slate-50 w-full py-16">
     <div className="max-w-7xl w-full mx-auto px-4">
