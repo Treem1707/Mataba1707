@@ -10,6 +10,7 @@ import {
   UserGroupIcon,
   UserIcon,
 } from "@heroicons/react/24/outline";
+import { Link } from "react-router-dom";
 
 const Enroll = () => {
   return (
@@ -124,9 +125,9 @@ const Enroll = () => {
                 February 28 2023{" "}
               </p>
               <div className="flex">
-                <div className="flex bg-pink-600 text-white px-4 py-3 rounded-full">
+                <Link to='/register' className="flex bg-pink-600 text-white px-4 py-3 rounded-full">
                   Enroll Now
-                </div>
+                </Link>
               </div>
               <p className="text-slate-400 text-sm font-medium">
                 Click the Enroll button to join our community of passionate

@@ -1,5 +1,6 @@
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
 import hero from "@assets/Images/hero-section.svg";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -17,9 +18,9 @@ const HeroSection = () => {
             empowering us to achieve our dreams and create a brighter future.
           </p>
           <div className="flex">
-            <div className="flex bg-pink-600 text-white text-xs uppercase rounded-full font-medium px-4 py-2">
+            <Link to='/enroll' className="flex bg-pink-600 text-white text-xs uppercase rounded-full font-medium px-4 py-2">
               Get Started
-            </div>
+            </Link>
           </div>
           <div className="flex flex-row items-center space-x-4">
             <div className="flex flex-row space-x-1 items-center py-1 px-2 bg-slate-100 rounded-full">
