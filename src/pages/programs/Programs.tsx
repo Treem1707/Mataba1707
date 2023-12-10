@@ -9,6 +9,14 @@ import { Avatar } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Programs = () => {
+  const programs = [
+    {      name: "Mechatronics Engineering", },
+    {      name: "Information technolopgy", },
+    {      name: "Computer Engineering", },
+    {      name: "Tourism & hospitaality", },
+    {      name: "Visual arts ", },
+    {      name: "Agricultural Engineering", },
+  ];
   return (
     <GeneralLayout>
       <AboutHeroSection heading="Programs" />
@@ -21,12 +29,11 @@ const Programs = () => {
             Subscribe for Education Insights!
           </p>
           <div className="grid grid-cols-3 gap-8">
-            <EnrollItem />
-            <EnrollItem />
-            <EnrollItem />
-            <EnrollItem />
-            <EnrollItem />
-            <EnrollItem />
+           {
+            programs.map((item, index)=>(
+              <EnrollItem name={item.name} key={index} />
+            ))
+           }
           </div>
         </div>
       </div>
@@ -36,7 +43,11 @@ const Programs = () => {
   );
 };
 
-const EnrollItem = () => {
+interface EnrollItemProps{
+  name: string
+}
+
+const EnrollItem = (props:EnrollItemProps) => {
   return (
     <div className="flex flex-col border border-[#9747FF] rounded-tl-xl rounded-br-xl p-4">
       <div className="flex flex-row items-center justify-between w-full pb-4">
@@ -56,7 +67,7 @@ const EnrollItem = () => {
         <img src={course_pic} className="h-60" alt="" />
       </div>
       <p className="text-lg font-semibold text-slate-900 py-4">
-        Information Technology
+        {props.name}
       </p>
       <div className="border-t border-slate-200"></div>
       <div className="flex flex-row items-center py-4 space-x-2">
