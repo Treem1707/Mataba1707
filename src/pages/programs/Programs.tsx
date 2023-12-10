@@ -20,13 +20,13 @@ const Programs = () => {
   return (
     <GeneralLayout>
       <AboutHeroSection heading="Programs" />
-      <div className="flex w-full bg-slate-50 py-16 ">
+      <div className="flex w-full bg-slate-50 py-16 px-4 ">
         <div className="max-w-7xl w-full mx-auto space-y-6 flex flex-col">
           <p className="text-sm  font-medium text-center text-pink-600">
-            OUR PROFESSIONALS
+            INTRODUCTION
           </p>
           <p className="max-w-xs mx-auto w-full pb-16 text-3xl text-center text-slate-900 font-bold">
-            Subscribe for Education Insights!
+            Optimize your learning approach for academic success
           </p>
           <div className="grid grid-cols-3 gap-8">
            {
