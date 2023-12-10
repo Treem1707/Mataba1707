@@ -1,5 +1,6 @@
 import { CheckIcon } from "@heroicons/react/24/solid";
 import engineering_faculty from "@assets/Images/faculty-engineering.png";
+import { Link } from "react-router-dom";
 
 type Props = {
   image: any;
@@ -23,9 +24,9 @@ const FacultyComponent = (props: Props) => {
           </div>
         ))}
 
-        <p className="text-pink-600 underline text-sm font-medium">
+        <Link to='/programs' className="text-pink-600 hover:text-pink-700 underline text-sm font-medium">
           Learn More
-        </p>
+        </Link>
       </div>
     </div>
   );
