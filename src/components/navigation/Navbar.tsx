@@ -1,16 +1,28 @@
 import React, { useState } from "react";
+import { useLocation } from 'react-router-dom'
 
 type Props = {};
 
 function Navbar({}: Props) {
   const [navbar, setNavbar] = useState<boolean>(false);
+  const location = useLocation();
+  
+  const nav_options = [
+    { name: "Home", location: "/", _id: '/' },
+    { name: "About Us", location: "/about" , _id: '/about'},
+    { name: "Programs", location: "/programs", _id: '/programs' },
+    { name: "Contact Us", location: "/", _id: '/contact' },
+  ];
   return (
     <nav className="w-full bg-slate-50 ">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="/">
-              <h2 className="text-2xl font-semibold text-slate-500"><span className="text-slate-900 font-extrabold">Enroll</span>Mate</h2>
+              <h2 className="text-2xl font-semibold text-slate-500">
+                <span className="text-slate-900 font-extrabold">Enroll</span>
+                Mate
+              </h2>
             </a>
             <div className="md:hidden">
               <button
@@ -57,38 +69,27 @@ function Navbar({}: Props) {
             }`}
           >
             <ul className="items-center text-sm font-medium justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-text-slate-700 hover:text-slate-900">
-                <a href="/">Home</a>
-              </li>
-              <li className="text-text-slate-700 hover:text-slate-900">
-                <a href="/about">About Us</a>
-              </li>
-              <li className="text-text-slate-700 hover:text-slate-900">
-                <a href="/programs">Programs</a>
-              </li>
-              {/* <li className="text-text-slate-700 hover:text-slate-900">
-                <a href="javascript:void(0)">Pages</a>
-              </li> */}
-              {/* <li className="text-text-slate-700 hover:text-slate-900">
-                <a href="javascript:void(0)">Blog</a>
-              </li> */}
-              <li className="text-text-slate-700 hover:text-slate-900">
-                <a href="javascript:void(0)">Contact Us</a>
-              </li>
+              {nav_options.map((item, index) => (
+                <li
+                  key={index}
+                  className={`${location.pathname === item._id ? "text-pink-600 ":"text-slate-700 hover:text-slate-900 "} `}
+                >
+                  <a href={item.location}>{item.name}</a>
+                </li>
+              ))}
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-            <a
-            href="/register"
-            className="px-4 py-2 text-white text-sm font-medium bg-pink-600 rounded-full hover:bg-pink-700 uppercase"
-          >
-            Join us now
-          </a>
+              <a
+                href="/register"
+                className="px-4 py-2 text-white text-sm font-medium bg-pink-600 rounded-full hover:bg-pink-700 uppercase"
+              >
+                Join us now
+              </a>
             </div>
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          
           <a
             href="/register"
             className="px-4 py-2 text-white text-sm font-medium bg-pink-600 rounded-full hover:bg-pink-700 uppercase"
