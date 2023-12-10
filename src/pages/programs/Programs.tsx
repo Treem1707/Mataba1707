@@ -71,7 +71,7 @@ const EnrollItem = () => {
       </div>
       <Link
         to={"/enroll"}
-        className="bg-pink-600 uppercase text-center rounded-full py-3 text-sm text-white"
+        className="bg-pink-600 hover:bg-pink-700 uppercase text-center rounded-full py-3 text-sm text-white"
       >
         Join Now
       </Link>
