@@ -5,6 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { apiUrl } from "@utils/apiUrl";
 import { getMessage } from "@helpers/getMessage";
+import PrimaryButton from "@components/buttons/PrimaryButton";
 
 type Props = {};
 
@@ -182,9 +183,7 @@ const FaqsSection = (props: Props) => {
               />
             </div>
             <div className="flex">
-              <div className="flex px-4 py-2 bg-pink-600 font-medium text-sm rounded-full text-white">
-                Send Message
-              </div>
+              <PrimaryButton onClick={sendEmail} loading={loading} text={"Send Message"} />
             </div>
           </div>
           {/* faqs */}
