@@ -7,6 +7,8 @@ import {
 } from "@heroicons/react/24/solid";
 import { getMessage } from "@helpers/getMessage";
 import axios from "axios";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import icon from '@assets/icon.png'
 
 type Props = {
   children: ReactNode;
@@ -53,12 +55,12 @@ function GeneralLayout({ children }: Props) {
   };
 
   return (
-    <div className="relatives min-h-screen flex flex-col">
+    <div className="relatives min-h-screen flex flex-col h-full">
       <div className="nav">
         <Navbar />
       </div>
       {children}
-      <div className="flex absolute bottom-8 right-10 flex-col">
+      <div className="flex fixed bottom-8 right-10 flex-col ">
         {isChatOpen && (
           <div className="relative h-96 w-80 shadow-lg bg-white rounded-2xl mb-2 flex flex-col">
             <div
@@ -69,7 +71,7 @@ function GeneralLayout({ children }: Props) {
             </div>
             <div className="flex flex-row justify-between bg-pink-600 p-4 text-white rounded-t-2xl">
               <div className="flex flex-row items-center space-x-2">
-                {/* <img src="logo" alt="logo" /> */}
+                <img src={icon} className="h-10  w-10" alt="logo" />
                 <p>EnrollMate</p>
               </div>
               <div
@@ -140,7 +142,55 @@ function GeneralLayout({ children }: Props) {
           </div>
         </div>
       </div>
-      <div className="footer">footer</div>
+      <div className="footer w-full bg-slate-50 p-16">
+        <div className="max-w-7xl px-4 grid grid-cols-4 gap-8 mx-auto w-full">
+          <div className="col-span-1">
+            <div className="flex">
+              <div className="flex flex-col space-y-4">
+                <div className="flex flex-row space-x-1 items-center py-1 px-2 bg-[#E5D8FD] rounded-full text-[#9747FF] ">
+                  <FaFacebook height={32} width={32} className="" />
+                  <p className="text">Facebook</p>
+                </div>
+                <div className="flex flex-row space-x-1 items-center py-1 px-2 bg-[#E5D8FD] rounded-full text-[#9747FF]">
+                  <FaLinkedin height={32} width={32} className="" />
+                  <p className="text">LinkedIn</p>
+                </div>
+                <div className="flex flex-row space-x-1 items-center py-1 px-2 bg-[#E5D8FD] rounded-full text-[#9747FF]">
+                  <FaInstagram height={32} width={32} className="" />
+                  <p className="text">Instagram</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <p className="text-slate-900 font-bold ">
+              Enroll<span className="font-medium text-slate-400">Mate</span>
+            </p>
+            <p className="text-slate-500">7080 Willow Cresent Avenue</p>
+            <p className="text-slate-500">Old Prospect</p>
+            <p className="text-slate-500">Mainaway</p>
+            <p className="text-slate-500">Harare</p>
+            <p className="text-slate-500">Zimbabwe</p>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <p className="text-slate-900 font-bold ">
+              Enroll<span className="font-medium text-slate-400">Mate</span>
+            </p>
+            <p className="text-slate-500">Tel: +263 786 655 434</p>
+            <p className="text-slate-500">Open Mo-Fr 08:00 - 16:00</p>
+            <p className="text-slate-500">(Off semester 09:00 - 15:00)</p>
+          </div>
+          <div className="col-span-1 space-y-4">
+            <p className="text-slate-900 font-bold ">
+              Enroll<span className="font-medium text-slate-400">Mate</span> Campus 2
+            </p>
+            <p className="text-slate-500">7080 Willow Cresent Avenue</p>
+            <p className="text-slate-500">Cosmos Avenue</p>
+            <p className="text-slate-500">Norton</p>
+            <p className="text-slate-500">Zimbabwe</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

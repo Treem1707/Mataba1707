@@ -83,143 +83,135 @@ const Register = (props: Props) => {
   };
   return (
     <GeneralLayout>
-      <div className="flex min-h-screen flex-col bg-gray-100 sm:px-6 lg:px-8">
-        <div className="pt-12 sm:mx-auto sm:w-full sm:max-w-md">
-          <h1 className="my-2 text-center text-lg font-extrabold text-gray-900 md:text-3xl">
-            Register
-          </h1>
-        </div>
-
-        <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-            <GoogleAuthButton onClick={login_With_Google} loading={loading} />
-            <div className="flex w-full flex-row items-center space-x-4 py-4">
-              <Divider />
-              <p>Or</p>
-              <Divider />
-            </div>
-
-            <div className="space-y-6">
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Email address
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    type="email"
-                    autoComplete="email"
-                    required
-                    className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:outline-none  sm:text-sm"
-                  />
-                </div>
+      <div className="flex min-h-screen flex-col bg-gray-50 sm:px-6 lg:px-8 items-center content-center justify-center">
+        <div className="max-w-7xl w-full mx-auto grid space-y-8 grid-cols-2 gap-8">
+          <div className="col-span-1 space-y-8">
+            <p className="text-slate-900 font-semibold text-lg">
+              Online Tracking System
+            </p>
+            <div className="border-t border-slate-200"></div>
+            <p className="text-slate-400 text-sm font-medium">
+              Our online application system is quick, easy and secure to use.
+              You can: Save and edit your application easily and as often as you
+              like before submitting it and track the progress of your
+              application at anytime save.
+            </p>
+            <p className="text-slate-400 text-sm font-medium">
+              You can contact our Registry Department on: +263 786 655 434 or
+              +263 779 767 435 if you are failing to complete your registration.
+              For more assistance contact academicregistryem.ac.zw
+            </p>
+          </div>
+          <div className="col-span-1 space-y-8">
+            <div className="border border-purple-600 rounded-tl-3xl grid grid-cols-2 gap-8 rounded-br-3xl bg-white p-8">
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">
+                  Surname
+                </p>
+                <input
+                  type="text"
+                  className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
+                  placeholder=""
+                />
               </div>
-              <div>
-                <label
-                  htmlFor="full_name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Full Name
-                </label>
-                <div className="mt-1">
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">Name</p>
+                <input
+                  type="text"
+                  className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
+                  placeholder=""
+                />
+              </div>
+              <div className="col-span-2">
+                <p className="text-sm font-medium text-pink-600 pb-2">
+                  National Id
+                </p>
+                <div className="grid  grid-cols-6 items-center space-x-4">
                   <input
-                    id="full_name"
-                    name="full_name"
-                    value={full_name}
-                    onChange={(e) => setFullName(e.target.value)}
+                    type="number"
+                    className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
+                    placeholder="00"
+                  />
+                  <input
                     type="text"
-                    autoComplete="full_name"
-                    required
-                    className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:outline-none  sm:text-sm"
+                    className="bg-purple-200 col-span-3 rounded-full px-2 py-3"
+                    placeholder=""
                   />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="password"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  Password
-                </label>
-                <div className="mt-1">
-                  <div className="flex flex-row items-center rounded-md border border-gray-300 px-3 shadow-sm ">
-                    <input
-                      id="password"
-                      name="password"
-                      type={show_password ? "text" : "password"}
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                      className="block w-full appearance-none py-2  placeholder-gray-400 focus:outline-none sm:text-sm"
-                    />
-                    {show_password ? (
-                      <div onClick={() => setShowPassword(false)}>
-                        <EyeSlashIcon
-                          height={20}
-                          width={20}
-                          className="text-gray-400"
-                        />
-                      </div>
-                    ) : (
-                      <div
-                        onClick={() => setShowPassword(true)}
-                        className="cursor-pointer"
-                      >
-                        <EyeIcon
-                          height={20}
-                          width={20}
-                          className="text-gray-400"
-                        />
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center">
                   <input
-                    id="remember-me"
-                    name="remember-me"
-                    type="checkbox"
-                    className="h-4 w-4 rounded border-gray-300 text-blue-primary focus:ring-red-400"
+                    type="number"
+                    className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
+                    placeholder="A"
                   />
-                  <label
-                    htmlFor="remember-me"
-                    className="ml-2 block text-sm text-gray-900"
-                  >
-                    Remember me
-                  </label>
-                </div>
-
-                <div className="text-sm">
-                  <a
-                    href="/forgot-password"
-                    className="font-medium text-blue-primary hover:text-red-400"
-                  >
-                    Forgot your password?
-                  </a>
+                  <input
+                    type="number"
+                    className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
+                    placeholder="00"
+                  />
                 </div>
               </div>
-
-              <div>
-                <PrimaryButton
-                  text="Sign In"
-                  className="w-full"
-                  onClick={login_user_handler}
-                  loading={loading}
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">
+                  Nationality
+                </p>
+                <input
+                  type="text"
+                  className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
+                  placeholder=""
+                />
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">
+                  Gender
+                </p>
+                <input
+                  type="text"
+                  className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
+                  placeholder=""
+                />
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">
+                  Password
+                </p>
+                <input
+                  type="password"
+                  className="bg-purple-200 col-span-1  w-full rounded-full px-2 py-3"
+                  placeholder=""
+                />
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">
+                  Confirm Password
+                </p>
+                <input
+                  type="password"
+                  className="bg-purple-200 col-span-1  w-full rounded-full px-2 py-3"
+                  placeholder=""
+                />
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">
+                  Your are applying for?
+                </p>
+                <input
+                  type="text"
+                  className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
+                  placeholder=""
+                />
+              </div>
+              <div className="col-span-1">
+                <p className="text-sm font-medium text-pink-600 pb-2 ">
+                  Upload documents
+                </p>
+                <input
+                  type="text"
+                  className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
+                  placeholder=""
                 />
               </div>
 
-              <div className="my-4 cursor-pointer text-center text-sm font-semibold text-gray-500 hover:text-gray-700">
-                <Link to={"/login"}>Not registered? Register instead!</Link>
+              <div className="flex w-full col-span-2 flex-col items-end">
+                <PrimaryButton text={"Register"} />
               </div>
             </div>
           </div>

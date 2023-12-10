@@ -5,12 +5,12 @@ type Props = {};
 function Navbar({}: Props) {
   const [navbar, setNavbar] = useState<boolean>(false);
   return (
-    <nav className="w-full bg-primary-original shadow">
+    <nav className="w-full bg-slate-50 ">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
             <a href="javascript:void(0)">
-              <h2 className="text-2xl font-bold text-white">RCZ</h2>
+              <h2 className="text-2xl font-semibold text-slate-500"><span className="text-slate-900 font-extrabold">Enroll</span>Mate</h2>
             </a>
             <div className="md:hidden">
               <button
@@ -20,7 +20,7 @@ function Navbar({}: Props) {
                 {navbar ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-white"
+                    className="w-6 h-6 text-slate-600"
                     viewBox="0 0 20 20"
                     fill="currentColor"
                   >
@@ -33,7 +33,7 @@ function Navbar({}: Props) {
                 ) : (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-white"
+                    className="w-6 h-6 text-slate-600"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -56,49 +56,44 @@ function Navbar({}: Props) {
               navbar ? "block" : "hidden"
             }`}
           >
-            {/* <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-white hover:text-indigo-200">
+            <ul className="items-center text-sm font-medium justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
+              <li className="text-text-slate-700 hover:text-slate-900">
                 <a href="javascript:void(0)">Home</a>
               </li>
-              <li className="text-white hover:text-indigo-200">
+              <li className="text-text-slate-700 hover:text-slate-900">
+                <a href="/about">About Us</a>
+              </li>
+              <li className="text-text-slate-700 hover:text-slate-900">
+                <a href="/programs">Programs</a>
+              </li>
+              {/* <li className="text-text-slate-700 hover:text-slate-900">
+                <a href="javascript:void(0)">Pages</a>
+              </li> */}
+              {/* <li className="text-text-slate-700 hover:text-slate-900">
                 <a href="javascript:void(0)">Blog</a>
+              </li> */}
+              <li className="text-text-slate-700 hover:text-slate-900">
+                <a href="javascript:void(0)">Contact Us</a>
               </li>
-              <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">About US</a>
-              </li>
-              <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">Contact US</a>
-              </li>
-            </ul> */}
+            </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              <a
-                href="/login"
-                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-              >
-                Sign in
-              </a>
-              <a
-                href="/register"
-                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-              >
-                Sign up
-              </a>
+            <a
+            href="/register"
+            className="px-4 py-2 text-white text-sm font-medium bg-pink-600 rounded-full hover:bg-pink-700 uppercase"
+          >
+            Join us now
+          </a>
             </div>
           </div>
         </div>
         <div className="hidden space-x-2 md:inline-block">
-          <a
-            href="/login"
-            className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-          >
-            Sign in
-          </a>
+          
           <a
             href="/register"
-            className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+            className="px-4 py-2 text-white text-sm font-medium bg-pink-600 rounded-full hover:bg-pink-700 uppercase"
           >
-            Sign up
+            Join us now
           </a>
         </div>
       </div>

@@ -1,14 +1,23 @@
-import GeneralLayout from '@layouts/GeneralLayout'
-import { ReactElement } from 'react'
+import FacultySection from "@components/page-section/FacultySection";
+import MissionVision from "@components/page-section/MissionVision";
+import HeroSection from "@components/page-section/HeroSection";
+import GeneralLayout from "@layouts/GeneralLayout";
+import { ReactElement, useState } from "react";
+import NewsSection from "@components/page-section/NewsSection";
+import ContactSection from "@components/page-section/ContactSection";
 
-type Props = {}
+type Props = {};
 
-const Home = (props: Props):ReactElement => {
+const Home = (props: Props): ReactElement => {
   return (
     <GeneralLayout>
-      <div className='flex-1 h-full bg-slate-50'>Home Page</div>
+      <HeroSection />
+      <MissionVision />
+      <FacultySection />
+      <NewsSection />
+      <ContactSection />
     </GeneralLayout>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
