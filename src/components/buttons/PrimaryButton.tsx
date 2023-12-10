@@ -22,7 +22,7 @@ const PrimaryButton = ({
       className={`${className} ${
         outline
           ? "text-pink-600 bg-white border hover:bg-pink-600 hover:text-white"
-          : "bg-pink-600 text-white hover:bg-blue-dark "
+          : "bg-pink-600 text-white hover:bg-pink-700 "
       } rounded-full outline-none border-pink-600 px-4 py-3 `}
     >
       {loading ? (
