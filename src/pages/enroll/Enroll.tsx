@@ -11,11 +11,12 @@ import {
   UserIcon,
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
+import PrimaryButton from "@components/buttons/PrimaryButton";
 
 const Enroll = () => {
   return (
     <GeneralLayout>
-      <AboutHeroSection heading="Enroll" />
+      <AboutHeroSection heading="Enroll" crum="Enroll" />
       <div className="w-full bg-slate-50 py-16">
         <div className="max-w-7xl w-full mx-auto grid grid-cols-5 gap-8">
           {/* right side */}
@@ -193,17 +194,16 @@ const Enroll = () => {
               </div>
             </div>
             {/* item 3 */}
-            <div className="border border-purple-600 rounded-tl-3xl rounded-br-3xl p-8 space-y-6">
+            <div className="border border-purple-600 rounded-tl-3xl rounded-br-3xl p-8 space-y-6 flex flex-col">
               <p className="max-w-sm text-slate-900 font-semibold">
                 Subscribe Our Newsletter
               </p>
               <input
                 type="text"
                 className="bg-purple-200 rounded-full px-4 py-3"
+                placeholder="Enter email"
               />
-              <div className="bg-pink-600 text-white px-4 py-3 text-center uppercase">
-                Subscribe here
-              </div>
+              <PrimaryButton text={'SUBSCRIBE HERE'} />
             </div>
           </div>
         </div>

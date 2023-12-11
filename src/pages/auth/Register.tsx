@@ -138,7 +138,7 @@ const Register = (props: Props) => {
                     placeholder=""
                   />
                   <input
-                    type="number"
+                    type="text"
                     className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                     placeholder="A"
                   />

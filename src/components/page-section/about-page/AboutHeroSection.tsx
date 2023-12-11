@@ -2,6 +2,7 @@ import hero_section from "@assets/about-page/about-hero.svg";
 
 type Props = {
   heading: string;
+  crum: string
 };
 
 const AboutHeroSection = (props: Props) => {
@@ -13,7 +14,7 @@ const AboutHeroSection = (props: Props) => {
             {props.heading}
           </p>
           <p className="text-slate-900 font-semibold">
-            <span className="text-pink-600">Home</span> / <span>About</span>
+            <span className="text-pink-600">Home</span> / <span>{props.crum}</span>
           </p>
         </div>
         <div className="col-span-2">

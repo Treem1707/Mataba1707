@@ -19,7 +19,7 @@ const Programs = () => {
   ];
   return (
     <GeneralLayout>
-      <AboutHeroSection heading="Programs" />
+      <AboutHeroSection heading="Programs" crum="Programs" />
       <div className="flex w-full bg-slate-50 py-16 px-4 ">
         <div className="max-w-7xl w-full mx-auto space-y-6 flex flex-col">
           <p className="text-sm  font-medium text-center text-pink-600">

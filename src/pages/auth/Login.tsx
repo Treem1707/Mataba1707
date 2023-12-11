@@ -118,7 +118,7 @@ const Login = (props: Props) => {
                   placeholder=""
                 />
                 <input
-                  type="number"
+                  type="text"
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                   placeholder="A"
                 />
@@ -134,9 +134,9 @@ const Login = (props: Props) => {
                 className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                 placeholder=""
               />
-              <p className="text-slate-700 font-medium text-sm pt-8 pb-4">If you’re applying for the time, <span className="text-pink-600"> Create Account.</span></p>
-              <p className="text-slate-700 font-medium text-sm py-4">to track your application, <span className="text-pink-600"> Click here.</span></p>
-              <p className="text-slate-700 font-medium text-sm py-4">to view the FAQs, <span className="text-pink-600"> Click here.</span></p>
+              <Link to='/register' className="text-slate-700 font-medium text-sm pt-8 pb-4">If you’re applying for the time, <span className="text-pink-600"> Create Account.</span></Link>
+              <Link to='/register' className="text-slate-700 font-medium text-sm py-4">to track your application, <span className="text-pink-600"> Click here.</span></Link>
+              <Link to='/about' className="text-slate-700 font-medium text-sm py-4">to view the FAQs, <span className="text-pink-600"> Click here.</span></Link>
               <div className="flex w-full flex-col items-end">
               <PrimaryButton text={'Login'} />
               </div>

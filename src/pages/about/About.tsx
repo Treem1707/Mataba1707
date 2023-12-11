@@ -11,7 +11,7 @@ type Props = {};
 const About = (props: Props) => {
   return (
     <GeneralLayout>
-      <AboutHeroSection heading="About Us" />
+      <AboutHeroSection heading="About Us" crum="About" />
       <AboutIntroSection />
       <AboutDivider />
       <AboutWhy />
