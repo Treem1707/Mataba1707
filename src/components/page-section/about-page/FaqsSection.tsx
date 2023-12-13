@@ -6,6 +6,7 @@ import axios from "axios";
 import { apiUrl } from "@utils/apiUrl";
 import { getMessage } from "@helpers/getMessage";
 import PrimaryButton from "@components/buttons/PrimaryButton";
+import { useToast } from "@chakra-ui/react";
 
 type Props = {};
 
@@ -43,6 +44,7 @@ const FaqsSection = (props: Props) => {
   const [email, setEmail] = useState("");
   const [mesasage, setMessage] = useState("");
   const [name, setName] = useState("");
+  const toast = useToast();
 
   const sendEmail = async () => {
     setLoading(true);
@@ -57,8 +59,24 @@ const FaqsSection = (props: Props) => {
       setName("");
       setEmail("");
       setLoading(false);
+      toast({
+        title: "Messaage send.",
+        description: getMessage(data),
+        status: "success",
+        position: 'top-right',
+        duration: 9000,
+        isClosable: true,
+      });
       console.log(getMessage(data));
     } catch (error: any) {
+      toast({
+        title: "Message not send.",
+        description: getMessage(error),
+        status: "error",
+        position: 'top-right',
+        duration: 9000,
+        isClosable: true,
+      });
       setLoading(false);
       console.log(getMessage(error));
     }

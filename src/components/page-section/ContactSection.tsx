@@ -1,6 +1,7 @@
+import { useToast } from "@chakra-ui/react";
 import PrimaryButton from "@components/buttons/PrimaryButton";
 import { getMessage } from "@helpers/getMessage";
-import {apiUrl } from "@utils/apiUrl";
+import { apiUrl } from "@utils/apiUrl";
 import axios from "axios";
 import React, { useState } from "react";
 
@@ -11,6 +12,7 @@ const ContactSection = (props: Props) => {
   const [email, setEmail] = useState("");
   const [mesasage, setMessage] = useState("");
   const [name, setName] = useState("");
+  const toast = useToast();
 
   const sendEmail = async () => {
     setLoading(true);
@@ -19,15 +21,31 @@ const ContactSection = (props: Props) => {
         to: "tanalkarnld@gmail.com",
         from: email,
         text: mesasage,
-        name: name
+        name: name,
       });
       setMessage("");
       setName("");
       setEmail("");
       setLoading(false);
+      toast({
+        title: "Messaage send.",
+        description: getMessage(data),
+        status: "success",
+        position: 'top-right',
+        duration: 9000,
+        isClosable: true,
+      });
       console.log(getMessage(data));
     } catch (error: any) {
       setLoading(false);
+      toast({
+        title: "Message not send.",
+        description: getMessage(error),
+        status: "error",
+        position: 'top-right',
+        duration: 9000,
+        isClosable: true,
+      });
       console.log(getMessage(error));
     }
   };
