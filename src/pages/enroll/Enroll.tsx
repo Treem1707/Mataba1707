@@ -12,8 +12,47 @@ import {
 } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
 import PrimaryButton from "@components/buttons/PrimaryButton";
+import { useState } from "react";
+import { useToast } from "@chakra-ui/react";
+import axios from "axios";
+import { apiUrl } from "@utils/apiUrl";
+import { getMessage } from "@helpers/getMessage";
 
 const Enroll = () => {
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("");
+  const toast = useToast();
+
+  const sendEmail = async () => {
+    setLoading(true);
+    try {
+      const { data } = await axios.post(`${apiUrl}/mailer/subscribe`, {
+        to: email,
+      });
+      setEmail("");
+      setLoading(false);
+      toast({
+        title: "Subscribed.",
+        description: getMessage(data),
+        status: "success",
+        position: "top-right",
+        duration: 9000,
+        isClosable: true,
+      });
+      console.log(getMessage(data));
+    } catch (error: any) {
+      setLoading(false);
+      toast({
+        title: "Not Subscribed.",
+        description: getMessage(error),
+        status: "error",
+        position: "top-right",
+        duration: 9000,
+        isClosable: true,
+      });
+      console.log(getMessage(error));
+    }
+  };
   return (
     <GeneralLayout>
       <AboutHeroSection heading="Enroll" crum="Enroll" />
@@ -200,10 +239,12 @@ const Enroll = () => {
               </p>
               <input
                 type="text"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
                 className="bg-purple-200 rounded-full px-4 py-3"
                 placeholder="Enter email"
               />
-              <PrimaryButton text={'SUBSCRIBE HERE'} />
+              <PrimaryButton loading={loading} onClick={sendEmail} text={'SUBSCRIBE HERE'} />
             </div>
           </div>
         </div>
