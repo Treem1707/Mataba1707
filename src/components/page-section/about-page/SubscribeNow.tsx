@@ -1,4 +1,5 @@
 import subscribe_picture from "@assets/about-page/suscribe-picture.svg";
+import { useToast } from "@chakra-ui/react";
 import { getMessage } from "@helpers/getMessage";
 import { apiUrl } from "@utils/apiUrl";
 import axios from "axios";
@@ -9,23 +10,35 @@ type Props = {};
 const SubscribeNow = (props: Props) => {
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+  const toast = useToast();
 
   const sendEmail = async () => {
     setLoading(true);
     try {
-      const { data } = await axios.post(`${apiUrl}/mailer/send-mail`, {
+      const { data } = await axios.post(`${apiUrl}/mailer/subscribe`, {
         to: email,
-        from: email,
-        text: 'Thank you for subscribing to our news letter',
-        name: name,
       });
-      setName("");
       setEmail("");
       setLoading(false);
+      toast({
+        title: "Subscribed.",
+        description: getMessage(data),
+        status: "success",
+        position: "top-right",
+        duration: 9000,
+        isClosable: true,
+      });
       console.log(getMessage(data));
     } catch (error: any) {
       setLoading(false);
+      toast({
+        title: "Not Subscribed.",
+        description: getMessage(error),
+        status: "error",
+        position: "top-right",
+        duration: 9000,
+        isClosable: true,
+      });
       console.log(getMessage(error));
     }
   };
@@ -53,7 +66,7 @@ const SubscribeNow = (props: Props) => {
                 placeholder="Email"
               />
               <div
-                onClick={loading ? () => console.log('loading ...') : sendEmail}
+                onClick={loading ? () => console.log("loading ...") : sendEmail}
                 className="flex uppercase text-sm font-medium bg-pink-600 text-white rounded-r-full py-3 px-4"
               >
                 {loading ? "LOADING" : "SUBSCRIBE NOW"}
