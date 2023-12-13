@@ -79,8 +79,8 @@ const Register = (props: Props) => {
 
   return (
     <GeneralLayout>
-      <div className="flex min-h-screen flex-col bg-gray-50 sm:px-6 lg:px-8 items-center content-center justify-center">
-        <div className="max-w-7xl w-full mx-auto grid space-y-8 grid-cols-2 gap-8">
+      <div className="flex min-h-screen flex-col bg-gray-50 sm:px-6 lg:px-8 px-4 items-center content-center justify-center">
+        <div className="max-w-7xl w-full mx-auto grid space-y-8 md:grid-cols-2 grid-cols-1 gap-8">
           <div className="col-span-1 space-y-8">
             <p className="text-slate-900 font-semibold text-lg">
               Online Tracking System
@@ -99,7 +99,7 @@ const Register = (props: Props) => {
             </p>
           </div>
           <div className="col-span-1 space-y-8">
-            <div className="border border-purple-600 rounded-tl-3xl grid grid-cols-2 gap-8 rounded-br-3xl bg-white p-8">
+            <div className="border border-purple-600 rounded-tl-3xl grid md:grid-cols-2 grid-cols-1 md:gap-8 gap-4 rounded-br-3xl bg-white md:p-8 p-4">
               <div className="col-span-1">
                 <p className="text-sm font-medium text-pink-600 pb-2 ">
                   Surname
@@ -122,11 +122,11 @@ const Register = (props: Props) => {
                   placeholder=""
                 />
               </div>
-              <div className="col-span-2">
+              <div className="col-span-2 ">
                 <p className="text-sm font-medium text-pink-600 pb-2">
                   National Id
                 </p>
-                <div className="grid  grid-cols-6 items-center space-x-4">
+                <div className="grid grid-cols-6 items-center md:space-x-4 space-x-1">
                   <input
                     type="number"
                     value={id1}
