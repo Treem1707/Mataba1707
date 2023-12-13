@@ -142,8 +142,8 @@ function GeneralLayout({ children }: Props) {
           </div>
         </div>
       </div>
-      <div className="footer w-full bg-slate-50 p-16">
-        <div className="max-w-7xl px-4 grid grid-cols-4 gap-8 mx-auto w-full">
+      <div className="footer w-full bg-slate-50 md:p-16 p-4">
+        <div className="max-w-7xl px-4 grid md:grid-cols-4 grid-cols-1 gap-8 mx-auto w-full">
           <div className="col-span-1">
             <div className="flex">
               <div className="flex flex-col space-y-4">

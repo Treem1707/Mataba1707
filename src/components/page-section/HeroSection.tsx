@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <div className="bg-slate-50 flex items-center min-h-[90vh]">
       <div className="max-w-7xl w-full mx-auto px-4 grid grid-cols-5 items-center gap-2 ">
-        <div className="col-span-2  space-y-4">
+        <div className="md:col-span-2 col-span-5  space-y-4">
           <p className="text-pink-600 text-xs font-semibold">
             UNLEASH YOUR POTENTIAL
           </p>

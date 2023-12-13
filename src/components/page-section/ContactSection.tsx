@@ -52,7 +52,7 @@ const ContactSection = (props: Props) => {
 
   return (
     <div className="py-16 min-h-screen w-full grid items-center content-center px-4">
-      <div className="max-w-7xl bg-[#9747FF] p-16 rounded-tl-[80px] rounded-br-[80px] w-full mx-auto grid md:grid-cols-2 grid-cols-1 gap-16">
+      <div className="max-w-7xl bg-[#9747FF] md:p-16 p-8 rounded-tl-[70px] rounded-br-[70px] w-full mx-auto grid md:grid-cols-2 grid-cols-1 gap-16">
         <div className="col-span-1 space-y-2">
           <p className="text-5xl text-white font-bold">
             Write your contact data and we’ll get in touch with you

@@ -16,9 +16,9 @@ const NewsSection = (props: Props) => {
         { month: "More", _id: "more" },
       ];
   return (
-    <div className="max-w-7xl px-4 w-full mx-auto py-16 min-h-[40vh] grid items-center">
+    <div className="max-w-7xl px-4 w-full mx-auto md:py-16 py-8 min-h-[40vh] grid items-center">
         <div className="grid grid-cols-5 gap-8 items-center">
-          <div className="col-span-2 space-y-16 ">
+          <div className="md:col-span-2 col-span-5 space-y-16 ">
             <p className="text-3xl font-bold text-slate-900">News & Events</p>
             <div className="flex flex-row flex-wrap space-x-8">
               {new_items.map((item, index) => (
@@ -40,7 +40,7 @@ const NewsSection = (props: Props) => {
               ))}
             </div>
           </div>
-          <div className="col-span-3 grid grid-cols-2 gap-8">
+          <div className="md:col-span-3 col-span-5 grid md:grid-cols-2 grid-cols-1 gap-8">
             <NewsItem />
             <NewsItem />
           </div>

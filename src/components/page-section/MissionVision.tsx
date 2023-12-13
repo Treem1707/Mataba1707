@@ -3,8 +3,8 @@ import React from 'react'
 const MissionVision = () => {
   return (
     <div className="max-w-7xl w-full mx-auto py-16 px-4">
-    <div className="flex space-x-8">
-      <div className="flex flex-col bg-[#F4F7FC] w-2/3 md:p-16 p-8 rounded-tl-[90px] rounded-br-[90px] md:space-y-16 space-y-8">
+    <div className="flex md:space-x-8 space-x-0">
+      <div className="flex flex-col bg-[#F4F7FC] md:w-2/3 w-full md:p-16 p-8 rounded-tl-[90px] rounded-br-[90px] md:space-y-16 space-y-8">
         <p className="font-bold text-slate-900 text-3xl text-center">
           Mission & Vision
         </p>
