@@ -135,7 +135,7 @@ const Register = (props: Props) => {
                     placeholder="00"
                   />
                   <input
-                    type="text"
+                    type="number"
                     value={id2}
                     onChange={(e) => setId2(e.target.value)}
                     className="bg-purple-200 col-span-3 rounded-full px-2 py-3"
