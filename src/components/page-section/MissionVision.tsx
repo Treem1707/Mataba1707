@@ -8,7 +8,7 @@ const MissionVision = () => {
         <p className="font-bold text-slate-900 text-3xl text-center">
           Mission & Vision
         </p>
-        <div className="flex flex-row md:space-x-16 space-x-8">
+        <div className="flex md:flex-row flex-col md:space-x-16 space-x-8">
           <p className="text-slate-800 font-semibold">Mission</p>
           <p className="text-slate-500 text-sm">
             To provide both Zimbabwe and foreign students with excellent
@@ -17,7 +17,7 @@ const MissionVision = () => {
             Masters and doctoral levels.
           </p>
         </div>
-        <div className="flex flex-row md:space-x-16 space-x-8">
+        <div className="flex md:flex-row flex-col md:space-x-16 space-x-8">
           <p className="text-slate-800 font-semibold">Vision</p>
           <p className="text-slate-500 text-sm">
             To assume the role of a leader in the market of managerial,
