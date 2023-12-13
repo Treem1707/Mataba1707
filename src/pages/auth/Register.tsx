@@ -4,26 +4,41 @@ import React, { useState } from "react";
 import { getMessage } from "@helpers/getMessage";
 import PrimaryButton from "@components/buttons/PrimaryButton";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import GoogleAuthButton from "@components/buttons/GoogleAuthButton";
-import { Link } from "react-router-dom";
+import { apiUrl } from "@utils/apiUrl";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
 const Register = (props: Props) => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [full_name, setFullName] = useState("");
-  const [show_password, setShowPassword] = useState<boolean>(false);
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [gender, setGender] = useState("");
+  const [id1, setId1] = useState("");
+  const [id2, setId2] = useState("");
+  const [id3, setId3] = useState("");
+  const [id4, setId4] = useState("");
+  const [nationality, setNationality] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirm_password, setConfirmPassword] = useState("");
+  const [reason, setReason] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const toast = useToast();
+  const history = useNavigate()
 
   const login_user_handler = async () => {
     setLoading(true);
     try {
-      // const { data } = await axios.post(`${apiUrl}/api/auth/login`, {
-      //   email,
-      //   password,
-      // })
+      const { data } = await axios.post(`${apiUrl}/user/register`, {
+        name,
+        surname,
+        gender,
+        national_id: `${id1}-${id2}-${id3}-${id4}`,
+        nationality,
+        password,
+        confirm_password,
+        what_you_applying_for: reason
+      })
       // dispatch({ type: 'USER_LOGIN', payload: data })
       // Cookies.set('userInfo', JSON.stringify(data), { expires: 7 })
       // setTimeout(() => {
@@ -32,12 +47,13 @@ const Register = (props: Props) => {
       // }, 1000)
       setLoading(false);
       toast({
-        title: "Login successful.",
+        title: "Application successful.",
         status: "success",
         position: "top-right",
         duration: 9000,
         isClosable: true,
       });
+      history('/success')
     } catch (error: any) {
       setLoading(false);
       //@ts-ignore
@@ -51,36 +67,6 @@ const Register = (props: Props) => {
     }
   };
 
-  const login_With_Google = async () => {
-    try {
-      setLoading(true);
-      // const res = await signInWithPopup(auth, googleProvider)
-      // const user = res.user
-      // const { data } = await axios.post(`${apiUrl}/api/auth/login`, {
-      //   email: user.email,
-      //   googleAuthId: user.uid,
-      // })
-      // dispatch({ type: 'USER_LOGIN', payload: data })
-      // history.push('/explore')
-      setLoading(false);
-      toast({
-        title: "Login Successful",
-        status: "success",
-        position: "top-right",
-        duration: 9000,
-        isClosable: true,
-      });
-    } catch (error: any) {
-      setLoading(false);
-      toast({
-        title: getMessage(error),
-        status: "error",
-        position: "top-right",
-        duration: 9000,
-        isClosable: true,
-      });
-    }
-  };
   return (
     <GeneralLayout>
       <div className="flex min-h-screen flex-col bg-gray-50 sm:px-6 lg:px-8 items-center content-center justify-center">
@@ -110,6 +96,8 @@ const Register = (props: Props) => {
                 </p>
                 <input
                   type="text"
+                  value={surname}
+                  onChange={(e) => setSurname(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
                   placeholder=""
                 />
@@ -118,6 +106,8 @@ const Register = (props: Props) => {
                 <p className="text-sm font-medium text-pink-600 pb-2 ">Name</p>
                 <input
                   type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
                   placeholder=""
                 />
@@ -129,21 +119,29 @@ const Register = (props: Props) => {
                 <div className="grid  grid-cols-6 items-center space-x-4">
                   <input
                     type="number"
+                    value={id1}
+                    onChange={(e) => setId1(e.target.value)}
                     className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                     placeholder="00"
                   />
                   <input
                     type="text"
+                    value={id2}
+                    onChange={(e) => setId2(e.target.value)}
                     className="bg-purple-200 col-span-3 rounded-full px-2 py-3"
                     placeholder=""
                   />
                   <input
                     type="text"
+                    value={id3}
+                    onChange={(e) => setId3(e.target.value)}
                     className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                     placeholder="A"
                   />
                   <input
                     type="number"
+                    value={id4}
+                    onChange={(e) => setId4(e.target.value)}
                     className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                     placeholder="00"
                   />
@@ -155,6 +153,8 @@ const Register = (props: Props) => {
                 </p>
                 <input
                   type="text"
+                  value={nationality}
+                  onChange={(e) => setNationality(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
                   placeholder=""
                 />
@@ -165,6 +165,8 @@ const Register = (props: Props) => {
                 </p>
                 <input
                   type="text"
+                  value={gender}
+                  onChange={(e) => setGender(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
                   placeholder=""
                 />
@@ -175,6 +177,8 @@ const Register = (props: Props) => {
                 </p>
                 <input
                   type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="bg-purple-200 col-span-1  w-full rounded-full px-2 py-3"
                   placeholder=""
                 />
@@ -185,6 +189,8 @@ const Register = (props: Props) => {
                 </p>
                 <input
                   type="password"
+                  value={confirm_password}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
                   className="bg-purple-200 col-span-1  w-full rounded-full px-2 py-3"
                   placeholder=""
                 />
@@ -195,6 +201,8 @@ const Register = (props: Props) => {
                 </p>
                 <input
                   type="text"
+                  value={reason}
+                  onChange={(e) => setReason(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3 w-full"
                   placeholder=""
                 />
@@ -211,7 +219,7 @@ const Register = (props: Props) => {
               </div>
 
               <div className="flex w-full col-span-2 flex-col items-end">
-                <PrimaryButton text={"Register"} />
+                <PrimaryButton text={"Register"} loading={loading} onClick={login_user_handler} />
               </div>
             </div>
           </div>
