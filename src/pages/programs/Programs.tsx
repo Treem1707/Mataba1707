@@ -28,7 +28,7 @@ const Programs = () => {
           <p className="max-w-xs mx-auto w-full pb-16 text-3xl text-center text-slate-900 font-bold">
             Optimize Your Learning Approach for Academic Success
           </p>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-8">
            {
             programs.map((item, index)=>(
               <EnrollItem name={item.name} key={index} />
