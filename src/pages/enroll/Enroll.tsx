@@ -20,12 +20,12 @@ const Enroll = () => {
       <div className="w-full bg-slate-50 py-16 px-4">
         <div className="max-w-7xl w-full mx-auto grid grid-cols-5 gap-8">
           {/* right side */}
-          <div className="col-span-3 flex flex-col space-y-8">
-            <p className="text-lg font-semibold text-slate-900">
+          <div className="md:col-span-3 col-span-5 flex flex-col space-y-8">
+            <p className="text-lg font-semibold text-slate-900 text-center">
               Mechatronics Engineering: From Basics to Advanced
             </p>
             <div className="border-t border-slate-200"></div>
-            <div className="flex flex-row items-center justify-between">
+            <div className="flex md:flex-row flex-col md:items-center items-start md:space-y-0 space-y-2 justify-between">
               <div className="flex flex-row items-center space-x-1">
                 <PaperAirplaneIcon
                   height={16}
@@ -119,7 +119,7 @@ const Enroll = () => {
             </div>
           </div>
           {/* right side */}
-          <div className="col-span-2 flex flex-col space-y-16 w-full">
+          <div className="md:col-span-2 col-span-5 flex flex-col space-y-16 w-full">
             {/* item 1 */}
             <div className="border border-purple-600 rounded-tl-3xl rounded-br-3xl p-8 space-y-6">
               <p className="max-w-sm text-slate-900 font-semibold">
