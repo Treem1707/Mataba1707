@@ -85,7 +85,7 @@ const FaqsSection = (props: Props) => {
     <div className="w-full bg-slate-50 py-16">
       <div className="max-w-7xl w-full mx-auto grid grid-cols-3 gap-4 px-4">
         {/* first row */}
-        <div className="col-span-1 space-y-6">
+        <div className="md:col-span-1 col-span-3 space-y-6">
           <p className="text-sm font-medium text-pink-600">OUR PROFESSIONALS</p>
           <p className="max-w-xs text-3xl text-slate-900 font-bold">
             Our Expert Lecturers
@@ -100,7 +100,7 @@ const FaqsSection = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="md:col-span-1 col-span-3">
           <div className="flex">
             <div className="flex flex-col space-y-4 p-2 rounded-tl-xl rounded-br-xl border border-[#417CD4]">
               <img src={mataba} className="h-60 w-60 rounded-tl-xl" alt="" />
@@ -130,7 +130,7 @@ const FaqsSection = (props: Props) => {
             </div>
           </div>
         </div>
-        <div className="col-span-1">
+        <div className="md:col-span-1 col-span-3">
           <div className="flex">
             <div className="flex flex-col space-y-4 p-2 rounded-tl-xl rounded-br-xl border border-[#417CD4]">
               <img src={mataba} className="h-60 w-60 rounded-tl-xl" alt="" />
@@ -161,7 +161,7 @@ const FaqsSection = (props: Props) => {
           </div>
         </div>
         {/* second row */}
-        <div className="grid col-span-3 grid-cols-2 gap-8 pt-16">
+        <div className="grid col-span-3 md:grid-cols-2 grid-cols-1 gap-8 pt-16">
           {/* message form */}
           <div className="border border-[#9747FF] rounded-tl-[40px] rounded-br-[40px] p-4 space-y-4">
             <p className="text-lg font-bold text-slate-900 text-center max-w-sm mx-auto ">

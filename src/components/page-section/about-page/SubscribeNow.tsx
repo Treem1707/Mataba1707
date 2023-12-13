@@ -46,7 +46,7 @@ const SubscribeNow = (props: Props) => {
   return (
     <div className="flex bg-slate-50 w-full py-16">
       <div className="max-w-7xl w-full mx-auto px-4">
-        <div className="border flex flex-row rounded-tl-[40px] rounded-br-[40px] border-[#9747FF] divide-x-[1px] divide-[#9747FF]">
+        <div className="border flex md:flex-row flex-col rounded-tl-[40px] rounded-br-[40px] border-[#9747FF] divide-x-[1px] divide-[#9747FF]">
           <div className="p-8 flex-1 items-center justify-center content-center flex">
             <img src={subscribe_picture} className="h-80" alt="" />
           </div>
@@ -69,7 +69,7 @@ const SubscribeNow = (props: Props) => {
                 onClick={loading ? () => console.log("loading ...") : sendEmail}
                 className="flex uppercase text-sm font-medium bg-pink-600 text-white rounded-r-full py-3 px-4"
               >
-                {loading ? "LOADING" : "SUBSCRIBE NOW"}
+                {loading ? "LOADING" : "SUBSCRIBE"}
               </div>
             </div>
           </div>

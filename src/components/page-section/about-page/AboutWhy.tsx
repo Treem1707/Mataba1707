@@ -12,7 +12,7 @@ const AboutWhy = (props: Props) => {
   ];
   return (
     <div className=" bg-slate-50 w-full ">
-      <div className="grid grid-cols-2 max-w-7xl mx-auto py-16 px-4">
+      <div className="grid md:grid-cols-2 grid-cols-1 max-w-7xl mx-auto py-16 px-4">
         <div className="col-span-1 flex flex-col space-y-6 border-pink-900">
           <p className="text-sm font-medium text-pink-600">
             WHY CHOOSE ENROLLMATE
@@ -31,7 +31,7 @@ const AboutWhy = (props: Props) => {
             ))}
           </div>
         </div>
-        <div className="col-span-1 relative">
+        <div className="col-span-1 relative md:flex hidden">
           <div className="bg-pink-600 rounded-full h-4 w-4 absolute top-40 right-10 z-0"></div>
           <div className="bg-pink-600 rounded-full h-10 w-10 absolute bottom-5 right-20 z-0"></div>
           <div className="bg-pink-600 rounded-full h-60 w-60 absolute bottom-10 right-40 z-0"></div>
