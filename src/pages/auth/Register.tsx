@@ -28,6 +28,17 @@ const Register = (props: Props) => {
   const login_user_handler = async () => {
     setLoading(true);
     try {
+      if (!id1 && !id2 && !id3 && !id4) {
+        toast({
+          title: "Enter full ID",
+          status: "error",
+          position: "top-right",
+          duration: 9000,
+          isClosable: true,
+        });
+        setLoading(false);
+        return;
+      }
       const { data } = await axios.post(`${apiUrl}/user/register`, {
         name,
         surname,
