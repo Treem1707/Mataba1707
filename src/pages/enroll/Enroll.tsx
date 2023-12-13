@@ -17,7 +17,7 @@ const Enroll = () => {
   return (
     <GeneralLayout>
       <AboutHeroSection heading="Enroll" crum="Enroll" />
-      <div className="w-full bg-slate-50 py-16">
+      <div className="w-full bg-slate-50 py-16 px-4">
         <div className="max-w-7xl w-full mx-auto grid grid-cols-5 gap-8">
           {/* right side */}
           <div className="col-span-3 flex flex-col space-y-8">
