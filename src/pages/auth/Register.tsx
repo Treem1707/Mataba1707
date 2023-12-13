@@ -1,9 +1,8 @@
 import GeneralLayout from "@layouts/GeneralLayout";
-import { Divider, useToast } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useToast } from "@chakra-ui/react";
+import { useState } from "react";
 import { getMessage } from "@helpers/getMessage";
 import PrimaryButton from "@components/buttons/PrimaryButton";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
 import { apiUrl } from "@utils/apiUrl";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +23,7 @@ const Register = (props: Props) => {
   const [reason, setReason] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const toast = useToast();
-  const history = useNavigate()
+  const history = useNavigate();
 
   const login_user_handler = async () => {
     setLoading(true);
@@ -37,8 +36,8 @@ const Register = (props: Props) => {
         nationality,
         password,
         confirm_password,
-        what_you_applying_for: reason
-      })
+        email: reason,
+      });
       // dispatch({ type: 'USER_LOGIN', payload: data })
       // Cookies.set('userInfo', JSON.stringify(data), { expires: 7 })
       // setTimeout(() => {
@@ -53,7 +52,7 @@ const Register = (props: Props) => {
         duration: 9000,
         isClosable: true,
       });
-      history('/success')
+      history("/success");
     } catch (error: any) {
       setLoading(false);
       //@ts-ignore
@@ -196,9 +195,7 @@ const Register = (props: Props) => {
                 />
               </div>
               <div className="col-span-1">
-                <p className="text-sm font-medium text-pink-600 pb-2 ">
-                  Your are applying for?
-                </p>
+                <p className="text-sm font-medium text-pink-600 pb-2 ">Email</p>
                 <input
                   type="text"
                   value={reason}
@@ -219,7 +216,11 @@ const Register = (props: Props) => {
               </div>
 
               <div className="flex w-full col-span-2 flex-col items-end">
-                <PrimaryButton text={"Register"} loading={loading} onClick={login_user_handler} />
+                <PrimaryButton
+                  text={"Register"}
+                  loading={loading}
+                  onClick={login_user_handler}
+                />
               </div>
             </div>
           </div>
