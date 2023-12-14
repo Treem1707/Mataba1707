@@ -3,8 +3,6 @@ import { Divider, useToast } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { getMessage } from "@helpers/getMessage";
 import PrimaryButton from "@components/buttons/PrimaryButton";
-import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/outline";
-import GoogleAuthButton from "@components/buttons/GoogleAuthButton";
 import { Link } from "react-router-dom";
 
 type Props = {};
@@ -13,12 +11,27 @@ const Login = (props: Props) => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [show_password, setShowPassword] = useState<boolean>(false);
+  const [id1, setId1] = useState("");
+  const [id2, setId2] = useState("");
+  const [id3, setId3] = useState("");
+  const [id4, setId4] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const toast = useToast();
 
   const login_user_handler = async () => {
     setLoading(true);
     try {
+      if (!id1 && !id2 && !id3 && !id4) {
+        toast({
+          title: "Enter full ID",
+          status: "error",
+          position: "top-right",
+          duration: 9000,
+          isClosable: true,
+        });
+        setLoading(false);
+        return;
+      }
       // const { data } = await axios.post(`${apiUrl}/api/auth/login`, {
       //   email,
       //   password,
@@ -79,36 +92,70 @@ const Login = (props: Props) => {
               <div className="grid  grid-cols-6 items-center md:space-x-4 space-x-1">
                 <input
                   type="number"
+                  value={id1}
+                  onChange={(e) => setId1(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                   placeholder="00"
                 />
                 <input
                   type="number"
+                  value={id2}
+                  onChange={(e) => setId2(e.target.value)}
                   className="bg-purple-200 col-span-3 rounded-full px-2 py-3"
                   placeholder=""
                 />
                 <input
                   type="text"
+                  value={id3}
+                  onChange={(e) => setId3(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                   placeholder="A"
                 />
                 <input
                   type="number"
+                  value={id4}
+                  onChange={(e) => setId4(e.target.value)}
                   className="bg-purple-200 col-span-1 rounded-full px-2 py-3"
                   placeholder="00"
                 />
               </div>
-              <p className="text-sm font-medium text-pink-600 pb-2 pt-8">Password</p>
+              <p className="text-sm font-medium text-pink-600 pb-2 pt-8">
+                Password
+              </p>
               <input
-                type="number"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="bg-purple-200 col-span-3 rounded-full px-2 py-3"
                 placeholder=""
               />
-              <Link to='/register' className="text-slate-700 font-medium text-sm pt-8 pb-4">If you’re applying for the time, <span className="text-pink-600"> Create Account.</span></Link>
-              <Link to='/register' className="text-slate-700 font-medium text-sm py-4">to track your application, <span className="text-pink-600"> Click here.</span></Link>
-              <Link to='/about' className="text-slate-700 font-medium text-sm py-4">to view the FAQs, <span className="text-pink-600"> Click here.</span></Link>
+              <Link
+                to="/register"
+                className="text-slate-700 font-medium text-sm pt-8 pb-4"
+              >
+                If you’re applying for the time,{" "}
+                <span className="text-pink-600"> Create Account.</span>
+              </Link>
+              <Link
+                to="/register"
+                className="text-slate-700 font-medium text-sm py-4"
+              >
+                to track your application,{" "}
+                <span className="text-pink-600"> Click here.</span>
+              </Link>
+              <Link
+                to="/about"
+                className="text-slate-700 font-medium text-sm py-4"
+              >
+                to view the FAQs,{" "}
+                <span className="text-pink-600"> Click here.</span>
+              </Link>
               <div className="flex w-full flex-col items-end">
-              <PrimaryButton text={'Login'} />
+                <PrimaryButton
+                  onClick={login_user_handler}
+                  loading={loading}
+                  text={"Login"}
+                />
               </div>
             </div>
           </div>
