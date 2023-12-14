@@ -1,22 +1,23 @@
-import GeneralLayout from "@layouts/GeneralLayout";
-import { Divider, useToast } from "@chakra-ui/react";
-import React, { useState } from "react";
-import { getMessage } from "@helpers/getMessage";
 import PrimaryButton from "@components/buttons/PrimaryButton";
-import { Link } from "react-router-dom";
+import GeneralLayout from "@layouts/GeneralLayout";
+import { getMessage } from "@helpers/getMessage";
+import { useToast } from "@chakra-ui/react";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import { apiUrl } from "@utils/apiUrl";
 
 type Props = {};
 
 const Login = (props: Props) => {
-  const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
-  const [show_password, setShowPassword] = useState<boolean>(false);
   const [id1, setId1] = useState("");
   const [id2, setId2] = useState("");
   const [id3, setId3] = useState("");
   const [id4, setId4] = useState("");
   const [loading, setLoading] = useState<boolean>(false);
   const toast = useToast();
+  const history = useNavigate();
 
   const login_user_handler = async () => {
     setLoading(true);
@@ -32,10 +33,11 @@ const Login = (props: Props) => {
         setLoading(false);
         return;
       }
-      // const { data } = await axios.post(`${apiUrl}/api/auth/login`, {
-      //   email,
-      //   password,
-      // })
+      const { data } = await axios.post(`${apiUrl}/user/login`, {
+        national_id: `${id1}-${id2}-${id3}-${id4}`,
+        password,
+      });
+      history("/success");
       // dispatch({ type: 'USER_LOGIN', payload: data })
       // Cookies.set('userInfo', JSON.stringify(data), { expires: 7 })
       // setTimeout(() => {
